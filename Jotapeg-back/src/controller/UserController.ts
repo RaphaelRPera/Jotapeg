@@ -24,16 +24,12 @@ class UserController {
 
 
     public login = async (req: Request, res: Response): Promise<void> => {
-        console.log('UserController: login')        
         try {
             const {email, password} = req.body
             const loginData = {email, password}
             const userData = await userBusiness.login(loginData)
-            // res.status(200).send({token})
-            console.log('UserController: login TRY')        
             res.status(200).send(userData)
         } catch (error) {
-            console.log('UserController: login ERROR', error)
             const {statusCode, message} = error
             res.status(statusCode || 400).send({message})
         }
