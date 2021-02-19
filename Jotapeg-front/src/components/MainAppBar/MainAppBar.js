@@ -3,12 +3,8 @@ import { ButtonContainer, ButtonIcon, ButtonText, Img, LogoContainer, LogoFirstL
 import { useHistory } from 'react-router-dom'
 import { goToLogin, goToAddImage, goToMyImages, goToCollections } from '../../router/Coordinator'
 import { useSelector, useDispatch } from 'react-redux'
-// import { setNickname } from '../../store/Nickname/Nickname.actions'
-// import { setUser } from '../../store/User/User.actions'
 import icons from '../../icons/icons'   //objeto contendo todos os icones da aplicação
-// import { validateUser } from '../../services/user'
 import { getUser } from '../../store/User/User.actions'
-
 
 
 
@@ -34,7 +30,6 @@ export const MainAppBar = () => {
 
     const logo = 
         <LogoContainer onClick={() => goToMyImages(history)} >
-            {/* <LogoFirstLetter>J</LogoFirstLetter>OTAPEG */}
             <LogoFirstLetter>J</LogoFirstLetter>otapeg
         </LogoContainer>
 
@@ -115,11 +110,17 @@ export const MainAppBar = () => {
             <MainContainer>
                 {logo}
                 <MenuContainer>
-                    {user ? buttonAddImage : ''}
-                    {user ? buttonMyImages : ''}
-                    {user ? buttonCollections : ''}
-                    {user ? avatar : buttonLogin}
-                    {user ? buttonLogout : ''}
+                    {user && user !== 'unauthorized' ?
+                        <>
+                            {buttonAddImage}
+                            {buttonMyImages}
+                            {buttonCollections}
+                            {avatar}
+                            {buttonLogout}
+                        </>
+                      :
+                            buttonLogin
+                    }
                 </MenuContainer>
             </MainContainer>
         </PageContainer>

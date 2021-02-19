@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Button, TextField} from '@material-ui/core'
-import { ButtonContainer, ErrorContainer, Form, Link } from './style'
+import { ButtonContainer, ErrorContainer, Form } from './style'
 import { useHistory } from 'react-router-dom'
 import { useForm } from '../../hooks/useForm'
-import { login } from '../../services/user'
 import { goToSignUp } from '../../router/Coordinator'
 import { useDispatch, useSelector } from 'react-redux'
 import { userLogin } from '../../store/User/User.actions'
@@ -13,6 +12,7 @@ export const LoginForm = () => {
     const history = useHistory()
     const [form, setForm, handleInputChange] = useForm({email:'', password:''})
     const [error, setError] = useState('')
+    const user = useSelector(state => state.user)
 
     const dispatch = useDispatch()
 
@@ -33,9 +33,8 @@ export const LoginForm = () => {
         inputEmail.reportValidity()
 
         if (emailIsValid && passwordIsValid) {
-            // login(form, setError, dispatch, history)
             dispatch(userLogin(form))
-        }
+        }   
     }
 
     const inputEmail = 
@@ -85,10 +84,15 @@ export const LoginForm = () => {
         >Cadastre-se
         </Button>
 
+    useEffect (() => {
+        if (user === 'unauthorized') {setError('Email, apelido ou senha incorretos!')}
+    }, [user])
+
 
     return (
         <Form>
             <ErrorContainer error={error} > {error} </ErrorContainer>
+
             {inputEmail}
             {inputPassword}
 

@@ -1,10 +1,12 @@
 import axios from 'axios'
+import { url } from './api'
 import { goToMyImages } from '../router/Coordinator'
 import { setNickname } from '../store/Nickname/Nickname.actions'
 import { setUser } from '../store/User/User.actions'
 
 
-const baseUrl = 'http://localhost:3003'
+// const baseUrl = 'http://localhost:3003'
+const baseUrl = url
 
 
 export const signUp = (body, setError, dispatch, nickname, history) => {

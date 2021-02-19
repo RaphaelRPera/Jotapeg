@@ -35,7 +35,3 @@ export const ButtonContainer = styled.div`
     grid-template-rows: auto auto;
     row-gap: 10px;
 `
-
-export const Link = styled(Button)`
-    padding: 15px 0 0 0;
-`

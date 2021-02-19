@@ -1,7 +1,8 @@
 import axios from 'axios'
+import { url }  from './api'
 
-const baseUrl = 'http://localhost:3003'
-
+// const baseUrl = 'http://localhost:3003'
+const baseUrl = url
 
 export const addImage = async (body) => {
     const token = localStorage.getItem('token')
