@@ -5,8 +5,7 @@ import { PageContainer } from './style'
 export const Footer = () => {
     return (
         <PageContainer>
-            {/* jotapegue.com.br */}
-            jotapeg.com.br
+            {`©${new Date().getFullYear()} Raphael Ribeiro`}
         </PageContainer>
     )
 }
