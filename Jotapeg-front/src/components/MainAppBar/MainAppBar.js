@@ -34,7 +34,8 @@ export const MainAppBar = () => {
 
     const logo = 
         <LogoContainer onClick={() => goToMyImages(history)} >
-            <LogoFirstLetter>J</LogoFirstLetter>OTAPEG
+            {/* <LogoFirstLetter>J</LogoFirstLetter>OTAPEG */}
+            <LogoFirstLetter>J</LogoFirstLetter>otapeg
         </LogoContainer>
 
 

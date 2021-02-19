@@ -30,6 +30,7 @@ export const MainContainer = styled.div`
     max-height: 55px;
 `
 
+
 export const LogoContainer = styled.div`
     display: flex;
     align-items: center;
@@ -37,16 +38,24 @@ export const LogoContainer = styled.div`
     font-weight: bold;
     cursor: pointer;
     user-select: none;
-    font-family: 'Pacifico', cursive;
+    /* font-family: 'Pacifico', cursive; */
+    font-family: 'Lobster', cursive;
     /* font-family: 'Orbitron', sans-serif; */
-    font-weight: 700;
-    font-size: 16px;
-    @media screen and (min-width: 500px) {font-size: 18px};
+    /* font-weight: 700; */
+    /* font-size: 16px;
+    @media screen and (min-width: 500px) {font-size: 18px}; */
+    font-size: 24px;
+    font-weight: 100;
+    @media screen and (min-width: 500px) {font-size: 28px};
+    letter-spacing: 0.05em;
 `
 
+
 export const LogoFirstLetter = styled.span`
-    font-size: 26px;
-    @media screen and (min-width: 500px) {font-size: 28px};
+    /* font-size: 26px;
+    @media screen and (min-width: 500px) {font-size: 28px}; */
+    font-size: 30px;
+    @media screen and (min-width: 500px) {font-size: 38px};
 `
 
 

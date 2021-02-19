@@ -72,7 +72,7 @@ export const ImageContainer = () => {
         }
     }
 
-    if (images) {console.log(images)}
+    // if (images) {console.log(images)}
 
     // const cards = images.length && images.map((image, index) => {
     const cards = images && images.map((image, index) => {
