@@ -47,7 +47,6 @@ class ImageController {
             }
         });
         this.getImageAll = (req, res) => __awaiter(this, void 0, void 0, function* () {
-            console.log('ImageController > getImageAll');
             try {
                 const token = req.headers.authorization;
                 const image = yield ImageBusiness_1.imageBusiness.getImageAll({ token });
