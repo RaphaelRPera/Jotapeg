@@ -44,7 +44,6 @@ class ImageController {
 
 
     public getImageAll = async (req: Request, res: Response):Promise<any> => {
-        console.log('ImageController > getImageAll')
         try {
             const token = req.headers.authorization
             const image = await imageBusiness.getImageAll({token})

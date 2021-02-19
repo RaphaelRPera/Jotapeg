@@ -24,7 +24,7 @@ export const userLogin = (body) => {
                 dispatch(setUser(response.data))
             })
             .catch(error => {
-                console.log('userLogin: error:', error.response.data.message)
+                console.log('userLogin: error:', error)
                 const errorMsg = error.response.data.message
                 if (errorMsg === 'Invalid email or password') {
                     dispatch(setUser('unauthorized'))

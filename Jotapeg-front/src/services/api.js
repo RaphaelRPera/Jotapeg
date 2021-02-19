@@ -1,8 +1,7 @@
 import axios from 'axios'
 
-export const url = 'http://localhost:3003'
-// export const baseUrl = 'ec2-54-227-230-170.compute-1.amazonaws.com'
+export const baseUrl = 'http://ec2-54-227-230-170.compute-1.amazonaws.com:3003'
 
 export default axios.create({
-    baseURL: url
+    baseURL: baseUrl
 })
